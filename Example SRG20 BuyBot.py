@@ -19,10 +19,10 @@ decimals = contract.functions.decimals().call()
 circulatingSupply = contract.functions.getCirculatingSupply().call()/10**decimals
 
 #INSERT BOT TOKEN FROM BOT FATHER AND YOUR GROUP ID
-bot = telebot.TeleBot("PUT_TOKEN_ID", parse_mode="MARKDOWN")
-group_id = -1001889082958
-buyBotVideo = "https://ibb.co/qkyf5Bh"
-groupTG = "@SpaceTaco_OG"
+bot = telebot.TeleBot("INPUT_BOT_TOKEN_HERE", parse_mode="MARKDOWN")
+group_id = -1001889082958 # CHANGE GROUP ID
+buyBotVideo = "https://i.imgur.com/V0YWwhG.mp4" # CHANGE VIDEO
+groupTG = "@SpaceTaco\\_OG" # CHANGE TG 
 
 #latest Blocks and Txs
 latestBlock = web3.eth.block_number
@@ -55,10 +55,9 @@ while(True):
                                 f"*Buyer Position:* {bPos}\n"+
                                 f'*Price:* ${price:,.5f} ({priceSRG:,.5f} SRG)\n'+
                                 f'*MCap:* ${marketCap:,.2f}\n'+
-                                f"*TG:* {groupTG}\n"+
+                                "*TG:* @SpaceTaco\\_OG \n"+
                                 f'[TX](https://bscscan.com/tx/{txHash})',parse_mode= "MARKDOWN", video = buyBotVideo)
                 lastTx = newLastTx
-                
     latestBlock = dumBlock
-    time.sleep(10)
+    time.sleep(5)
     pass
